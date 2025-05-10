@@ -1,0 +1,222 @@
+:root {
+  /* Light Theme */
+  --light-bg: #f8f9fa;
+  --light-text: #212529;
+  --light-primary: #2a9d8f;
+  --light-secondary: #264653;
+  --light-accent: #e9c46a;
+
+  /* Dark Theme */
+  --dark-bg: #1a1a1a;
+  --dark-text: #e9ecef;
+  --dark-primary: #2a9d8f;
+  --dark-secondary: #adb5bd;
+  --dark-accent: #e76f51;
+
+  /* Common */
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+.light {
+  --bg-color: var(--light-bg);
+  --text-color: var(--light-text);
+  --primary-color: var(--light-primary);
+  --secondary-color: var(--light-secondary);
+  --accent-color: var(--light-accent);
+}
+
+.dark {
+  --bg-color: var(--dark-bg);
+  --text-color: var(--dark-text);
+  --primary-color: var(--dark-primary);
+  --secondary-color: var(--dark-secondary);
+  --accent-color: var(--dark-accent);
+}
+
+/* Global Styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  transition: var(--transition);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--primary-color);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Product Card */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.product-card {
+  background: var(--bg-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.product-content {
+  padding: 1.5rem;
+}
+
+.product-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin: 1rem 0;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-to-cart-btn:hover {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+/* Cart Page */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: var(--bg-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.cart-total {
+  position: sticky;
+  bottom: 0;
+  background: var(--bg-color);
+  padding: 1.5rem;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  color: var(--text-color);
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('https://images.unsplash.com/photo-1550009158-9ebf69173e03') center/cover;
+  color: white;
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin: 1.5rem 0;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.cta-btn {
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.cta-btn {
+  background: var(--accent-color);
+  color: white;
+}
+
+.cta-btn.outline {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
